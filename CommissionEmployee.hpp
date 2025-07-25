@@ -1,6 +1,3 @@
-#ifdef COMISSION_H
-#define COMISSION_H
-
 #include <string>
 using std::string;
 
@@ -16,23 +13,22 @@ public:
     CommissionEmployee(const string &, const string &, const string &, double = 0.0, double = 0.0);
     ~CommissionEmployee();
 
-    void setFirstName(const string &);
+    void setFirstName(string );
     string getFirstName() const;
 
-    void setLastName(const string &);
+    void setLastName(string );
     string getLastName() const;
 
-    void setSocialSecurityNumber(const string &);
+    void setSocialSecurityNumber(string );
     string getSocialSecurityNumber() const;
 
-    void setGrossSale(double);
-    double getGrossSale() const;
-
+    void setGrossSales(double);
+    double getGrossSales() const;
+    
     void setCommissionRate(double);
     double getCommissionRate() const;
 
     double earnings() const;
     void print() const;
-};
 
-#endif
+};

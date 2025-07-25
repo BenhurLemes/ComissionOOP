@@ -1,37 +1,29 @@
 #include <iostream>
-using std::cout;
-using std::endl;
-using std::fixed;
-
 #include <iomanip>
-using std::setprecision;
-
 #include "CommissionEmployee.hpp"
 
 int main(int argc, char const *argv[])
 {
-    CommissionEmployee employee("Sue", "Jones", "222-22-222", 10000, .60);
+    CommissionEmployee employee("Sue", "Jones", "222-22-2222", 1000, .06);
+    std::cout<< std::fixed << std::setprecision(2);
 
-    cout << fixed << setprecision(2);
-    
     // obtém os dados do empregado comissionado
-    cout << "Employee information obtained by get functions: \n"
+    std::cout << "Employee information obtained by get functions: \n"
     << "\nFirst name is " << employee.getFirstName()
     << "\nLast name is " << employee.getLastName()
     << "\nSocial security number is "
     << employee.getSocialSecurityNumber()
     << "\nGross sales is " << employee.getGrossSales()
-    << "\nCommission rate is " << employee.getCommissionRate() << endl;
-
+    << "\nCommission rate is " << employee.getCommissionRate() << "\n";
+    
     employee.setGrossSales( 8000 ); // configura as vendas brutas
     employee.setCommissionRate( .1 ); // configura a taxa de comissão
-
-    cout << "\nUpdated employee information output by print function: \n"
-    << endl;
+    
+    std::cout << "\nUpdated employee information output by print function: \n"
+    << "\n";
     employee.print(); // exibe as novas informações do empregado
-
+    
     // exibe os rendimentos do empregado
-    cout << "\n\nEmployee’s earnings: $" << employee.earnings() << endl;
-
+    std::cout << "\n\nEmployee’s earnings: $" << employee.earnings() << "\n";
     return 0;
 }
